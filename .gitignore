@@ -1,7 +1,8 @@
 # Delphi
-.local
-.identcache
-.res
-.dcu
-.bpl
-.exe
+*.local
+*.identcache
+*.res
+*.dcu
+*.bpl
+*.exe
+*.rsm
