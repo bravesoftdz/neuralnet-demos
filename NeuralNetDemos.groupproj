@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BB9BEC7A-C3D2-48F4-9E65-AFB7A43FD5C9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="NeuralLib\DemoNeuralNetLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestApp01\NeuralTest01.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestApp02\NeuralTest02.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestApp03\NeuralTest03.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestApp04\NeuralRacer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DemoNeuralNetLib">
+        <MSBuild Projects="NeuralLib\DemoNeuralNetLib.dproj"/>
+    </Target>
+    <Target Name="DemoNeuralNetLib:Clean">
+        <MSBuild Projects="NeuralLib\DemoNeuralNetLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DemoNeuralNetLib:Make">
+        <MSBuild Projects="NeuralLib\DemoNeuralNetLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NeuralTest01">
+        <MSBuild Projects="TestApp01\NeuralTest01.dproj"/>
+    </Target>
+    <Target Name="NeuralTest01:Clean">
+        <MSBuild Projects="TestApp01\NeuralTest01.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NeuralTest01:Make">
+        <MSBuild Projects="TestApp01\NeuralTest01.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NeuralTest02">
+        <MSBuild Projects="TestApp02\NeuralTest02.dproj"/>
+    </Target>
+    <Target Name="NeuralTest02:Clean">
+        <MSBuild Projects="TestApp02\NeuralTest02.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NeuralTest02:Make">
+        <MSBuild Projects="TestApp02\NeuralTest02.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NeuralTest03">
+        <MSBuild Projects="TestApp03\NeuralTest03.dproj"/>
+    </Target>
+    <Target Name="NeuralTest03:Clean">
+        <MSBuild Projects="TestApp03\NeuralTest03.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NeuralTest03:Make">
+        <MSBuild Projects="TestApp03\NeuralTest03.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NeuralRacer">
+        <MSBuild Projects="TestApp04\NeuralRacer.dproj"/>
+    </Target>
+    <Target Name="NeuralRacer:Clean">
+        <MSBuild Projects="TestApp04\NeuralRacer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NeuralRacer:Make">
+        <MSBuild Projects="TestApp04\NeuralRacer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DemoNeuralNetLib;NeuralTest01;NeuralTest02;NeuralTest03;NeuralRacer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DemoNeuralNetLib:Clean;NeuralTest01:Clean;NeuralTest02:Clean;NeuralTest03:Clean;NeuralRacer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DemoNeuralNetLib:Make;NeuralTest01:Make;NeuralTest02:Make;NeuralTest03:Make;NeuralRacer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
